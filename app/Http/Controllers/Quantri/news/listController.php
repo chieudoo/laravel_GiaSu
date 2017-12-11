@@ -8,15 +8,28 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 use App\Models\News;
+use App\Models\Role;
+use App\Models\addUserRole;
+use App\Models\User;
+use App\Models\Rule;
 use DateTime;
+use DB;
 
 class listController extends Controller
 {
     public function listNews()
     {	
     	$data=News::get()->toArray();
-    	$cate=Category::get()->toArray();
-    	return view('quantri.news.list',['data'=>$data,'cate'=>$cate]);
+        $cate=Category::get()->toArray();
+        
+        $quyen = DB::table('giasu_rule')->join('giasu_group','giasu_rule.role_id','=','giasu_group.id')->join('giasu_adduser','giasu_adduser.role_id','=','giasu_group.id')->select('giasu_rule.*','giasu_group.name as group','giasu_adduser.user_id')->get();
+
+        // echo "<pre>";
+        // print_r($quyen);
+        // echo "</pre>";
+        $id = Auth::user()->id;
+
+    	return view('quantri.news.list',['data'=>$data,'cate'=>$cate,'quyen'=>$quyen,'id'=>$id]);
     }
     public function addNews(Request $request)
     {

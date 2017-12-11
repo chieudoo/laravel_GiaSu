@@ -327,6 +327,17 @@ function listUser($data){
         echo "</td></tr>";
     }
 }
+
+function add($data,$n,$id)
+{
+    foreach($data as $item){
+        if($item->user_id ==  $id && $item->chucnang_id == $n){
+            if($item->rule_add == 1){
+                echo "<a class='btn btn-primary c_add' data-toggle='modal' href=''><i class='fa fa-plus'></i> Thêm Mới</a>";
+            }
+        }
+    }
+}
 //function frontend
 
 function menu($data,$parent){

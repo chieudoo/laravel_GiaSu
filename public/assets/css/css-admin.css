@@ -51,7 +51,12 @@ a:hover{
 	margin: 5px 0px 0px 0px;position: relative;
 }
 #nav-left > ul > li > ul{
-	position: absolute;right: -150px;bottom: 0;width: 150px;display: none;z-index: 100;
+	position: absolute;
+	right: -150px;
+	bottom: 45px;
+	width: 150px;
+	display: none;
+	z-index: 100;
 }
 #nav-left ul li ul li{
 	list-style: none;

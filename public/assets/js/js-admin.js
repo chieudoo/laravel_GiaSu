@@ -348,7 +348,52 @@ $(document).ready(function() {
     	$this=$(this);
     	var id=$this.attr('data-id');
 
-    });
+	});
+	
+	$('#submit_rule').click(function(e) {
+		e.preventDefault();
+
+		var q = $('select[name="role_id"]').val();
+		var cn = $('select[name="chucnang_id"]').val();
+		var t = $('input[name="them"]:checked').val();
+		var s = $('input[name="sua"]:checked').val();
+		var x = $('input[name="xoa"]:checked').val();
+
+		if(t == null){
+			t=0;
+		}
+		if(s == null){
+			s=0;
+		}
+		if(x == null){
+			x=0;
+		}
+		
+		var data = new FormData();
+		data.append('role',q);
+		data.append('cn',cn);
+		data.append('add',t);
+		data.append('edit',s);
+		data.append('delete',x);
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.ajax({
+			url: 'add-rule-group',
+			type: 'POST',
+			processData:false,
+			contentType:false,
+			data: data,
+			success:function(kq){
+				console.log(kq);   
+			}
+		});
+		
+		
+		// console.log(q +" "+cn+" "+t+" "+s+" "+x);
+	});
 
 
 });

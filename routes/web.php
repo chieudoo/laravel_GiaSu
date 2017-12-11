@@ -344,6 +344,20 @@ Route::group(['middleware' => 'verifyadmin'], function() {
             Route::post('about',['as'=>'addabout','uses'=>'listController@addabout']);
        });
 
+       Route::group(['namespace'=>'phanquyen'],function(){
+            Route::get('phan-quyen',['as'=>'phanquyen','uses'=>'listController@phanquyen']);
+            Route::post('phan-quyen',['uses'=>'listController@postphanquyen']); 
+
+
+            Route::get('add-user-group',['uses'=>'listController@adduser']);
+            Route::post('add-user-group',['uses'=>'listController@postadduser']);
+
+            Route::get('detail-group/{id}',['uses'=>'listController@detailgroup'])->where('id','[0-9]+');
+
+            Route::get('add-rule-group',['uses'=>'listController@rulegroup']);
+            Route::post('add-rule-group',['uses'=>'listController@postrulegroup']);
+       });
+
 	});
 });
 //End định tuyến quản trị

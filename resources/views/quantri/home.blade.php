@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>@yield('title')</title>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="//code.jquery.com/jquery.js"></script>
@@ -84,6 +85,9 @@
 							<li><a href="{{ url('list-user') }}">User</a></li>
 						</ul>
 					</li>
+					@if(Auth::user()->id == 1)
+					<li><a href="{{ url('phan-quyen') }}">PHÂN QUYỀN</a></li>
+					@endif
 				</ul>
 			</div>
 			<div class="col-sm-10 col-md-10 col-lg-10" id="nav-right">

@@ -2,7 +2,13 @@
 @section('title','List News')
 @section('content')
 <hr>
+@if(Auth::user()->id == 1)
 <a class="btn btn-primary c_add" data-toggle="modal" href=''><i class="fa fa-plus"></i> Thêm Mới</a>
+@else
+<?php
+	add($quyen,1,$id);
+?>
+@endif
 <div class="c_modal">
 	<div class="col-md-8 col-md-offset-2 c_f">
 		<form method="POST" role="form" enctype="multipart/form-data">

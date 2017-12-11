@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2017 at 05:14 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Dec 11, 2017 at 05:09 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lrv12_giasu`
+-- Database: `lrv_giasu`
 --
 
 -- --------------------------------------------------------
@@ -45,6 +47,28 @@ CREATE TABLE `giasu_about` (
 
 INSERT INTO `giasu_about` (`id`, `phone1`, `phone2`, `address`, `gioithieu`, `chinhsach`, `dichvu`, `lienhe`, `created_at`, `updated_at`) VALUES
 (1, '12345678901', '12324245646', 'P302 - Tòa nhà CT5D - KĐT Mễ Trì Hạ - Phạm Hùng - Nam Từ Liêm - Hà Nội', '<h2>What is Lorem Ipsum?</h2>\r\n\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Why do we use it?</h2>\r\n\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h2>Where does it come from?</h2>\r\n\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.</p>\r\n\r\n<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &quot;de Finibus Bonorum et Malorum&quot; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>\r\n\r\n<h2>Where can I get some?</h2>\r\n\r\n<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#39;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', '<h2>What is Lorem Ipsum?</h2>\r\n\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Why do we use it?</h2>\r\n\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>', '<h2>What is Lorem Ipsum?</h2>\r\n\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>', NULL, NULL, '2017-06-02 07:56:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `giasu_adduser`
+--
+
+CREATE TABLE `giasu_adduser` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `giasu_adduser`
+--
+
+INSERT INTO `giasu_adduser` (`id`, `user_id`, `role_id`, `created_at`, `updated_at`) VALUES
+(1, 4, 1, '2017-12-11 10:21:02', '2017-12-11 10:21:02'),
+(2, 2, 1, '2017-12-11 10:32:43', '2017-12-11 10:32:43');
 
 -- --------------------------------------------------------
 
@@ -145,6 +169,28 @@ CREATE TABLE `giasu_giaovien` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `giasu_group`
+--
+
+CREATE TABLE `giasu_group` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `role` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `giasu_group`
+--
+
+INSERT INTO `giasu_group` (`id`, `name`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'group 1', 'ohBvDAU6iRKcdybTXzqtrV2GC3S4eglnp1afOMW7QJm9IZFNH8s0PYuEL5kwxj', '2017-12-11 09:56:31', '2017-12-11 09:56:31'),
+(2, 'group 2', 'WhgpVsPofxJjMz4A8DkimXytBZEb7OlL25nCavRurNFGUe93TcK1qSHQYId60w', '2017-12-11 10:37:17', '2017-12-11 10:37:17');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `giasu_hocvien`
 --
 
@@ -236,6 +282,13 @@ CREATE TABLE `giasu_news` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `giasu_news`
+--
+
+INSERT INTO `giasu_news` (`id`, `name`, `slug`, `image`, `cat_id`, `intro`, `content`, `user_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'lorem lorem', 'lorem-lorem', '1513006183-anh2.jpg', 1, 'lorem lorem', '<p><br />\r\nlorem loriem lorem</p>', 1, 1, '2017-12-11 15:29:43', '2017-12-11 15:29:43');
+
 -- --------------------------------------------------------
 
 --
@@ -255,6 +308,31 @@ CREATE TABLE `giasu_phancong` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `giasu_rule`
+--
+
+CREATE TABLE `giasu_rule` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `chucnang_id` int(11) NOT NULL,
+  `rule_add` int(11) NOT NULL DEFAULT '0',
+  `rule_edit` int(11) NOT NULL DEFAULT '0',
+  `rule_delete` int(11) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `giasu_rule`
+--
+
+INSERT INTO `giasu_rule` (`id`, `role_id`, `chucnang_id`, `rule_add`, `rule_edit`, `rule_delete`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 0, 0, 0, '2017-12-11 15:25:14', '2017-12-11 15:25:14'),
+(2, 1, 2, 1, 0, 0, '2017-12-11 16:05:28', '2017-12-11 16:05:28');
 
 -- --------------------------------------------------------
 
@@ -294,9 +372,9 @@ CREATE TABLE `giasu_users_admin` (
 --
 
 INSERT INTO `giasu_users_admin` (`id`, `name`, `email`, `status`, `level`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', 1, 0, '$2y$10$gnqeSdNZMAs6QQTk3c9Yw.MLn5GTEAiQHLR6/Eo0Qa//r7MwoLY6u', 'hpxBn3ApmPg5X6qsdlZbLi6bM5qWWQj92j2iB1iePTt3bNkyRZCwbumVzV8s', NULL, NULL),
+(1, 'admin', 'admin@gmail.com', 1, 0, '$2y$10$pSvH5.w446VLYD1butGFXuUlBeWj9B.fr7lnTl9JQ7/TsCBSL0jPm', 'hpxBn3ApmPg5X6qsdlZbLi6bM5qWWQj92j2iB1iePTt3bNkyRZCwbumVzV8s', NULL, '2017-12-11 11:11:20'),
 (2, 'do van chieu', 'dovanchieu95@gmail.com', 1, 0, '$2y$10$auCFu4ssAby.Rg4gbiD9leu1kKlPNnAZI70gNl/4322GKsBiikKmW', 'OGqWsS6UtCd6EfiNWoXX9XcPdWopH9HMsWHuumfUn6YDBpR5JKLk7WlIyvr8', '2017-05-29 20:59:27', '2017-05-29 21:00:07'),
-(4, 'chieu van', 'chieuth95@gmail.com', 1, 0, '$2y$10$Ow0/CpmOMhQy64DqS8Zc0O/uCsnR9EQS5vZPFwv3m0g3ywMWUMsoe', '8CekoqzAgCwKrPd7GiDgOewXmCOok93SljRot3DtUlqpUns1dJl2GPnAJWZN', '2017-05-30 07:47:36', '2017-05-30 07:49:19');
+(3, 'chieu van', 'chieuth95@gmail.com', 1, 0, '$2y$10$Ow0/CpmOMhQy64DqS8Zc0O/uCsnR9EQS5vZPFwv3m0g3ywMWUMsoe', 'vzlUq0XdtDhXV3tCKcOlue0mSvBmKUojIiDqhcj8XTXXGyKeZfKXhhsoV4AY', '2017-05-30 07:47:36', '2017-05-30 07:49:19');
 
 -- --------------------------------------------------------
 
@@ -327,7 +405,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2017_05_18_004038_create_cauhoi_table', 1),
 (29, '2017_05_22_232623_create_slide_table', 1),
 (30, '2017_05_28_233842_create_file_table', 1),
-(31, '2017_05_30_012938_create_about_table', 2);
+(31, '2017_05_30_012938_create_about_table', 2),
+(33, '2017_12_11_164027_create_group_user_table', 3),
+(34, '2017_12_11_170539_create_add_user_group', 4),
+(35, '2017_12_11_212716_create_rule_table', 5);
 
 -- --------------------------------------------------------
 
@@ -349,6 +430,12 @@ CREATE TABLE `password_resets` (
 -- Indexes for table `giasu_about`
 --
 ALTER TABLE `giasu_about`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `giasu_adduser`
+--
+ALTER TABLE `giasu_adduser`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -374,6 +461,12 @@ ALTER TABLE `giasu_file`
 -- Indexes for table `giasu_giaovien`
 --
 ALTER TABLE `giasu_giaovien`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `giasu_group`
+--
+ALTER TABLE `giasu_group`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -406,6 +499,12 @@ ALTER TABLE `giasu_news`
 -- Indexes for table `giasu_phancong`
 --
 ALTER TABLE `giasu_phancong`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `giasu_rule`
+--
+ALTER TABLE `giasu_rule`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -442,66 +541,98 @@ ALTER TABLE `password_resets`
 --
 ALTER TABLE `giasu_about`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `giasu_adduser`
+--
+ALTER TABLE `giasu_adduser`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `giasu_categories`
 --
 ALTER TABLE `giasu_categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `giasu_cauhoi`
 --
 ALTER TABLE `giasu_cauhoi`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `giasu_file`
 --
 ALTER TABLE `giasu_file`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `giasu_giaovien`
 --
 ALTER TABLE `giasu_giaovien`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `giasu_group`
+--
+ALTER TABLE `giasu_group`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `giasu_hocvien`
 --
 ALTER TABLE `giasu_hocvien`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `giasu_lophoc`
 --
 ALTER TABLE `giasu_lophoc`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `giasu_monhoc`
 --
 ALTER TABLE `giasu_monhoc`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `giasu_news`
 --
 ALTER TABLE `giasu_news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `giasu_phancong`
 --
 ALTER TABLE `giasu_phancong`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `giasu_rule`
+--
+ALTER TABLE `giasu_rule`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `giasu_slide`
 --
 ALTER TABLE `giasu_slide`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `giasu_users_admin`
 --
 ALTER TABLE `giasu_users_admin`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
